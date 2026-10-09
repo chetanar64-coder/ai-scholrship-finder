@@ -4,6 +4,8 @@ import { prisma } from "@/lib/db";
 import { ChatInterface } from "@/components/assistant/ChatInterface";
 import { Sparkles, Bot } from "lucide-react";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "AI Assistant — ScholarAI",
   description: "Web-augmented RAG scholarship assistant supercharged with live SerpApi search.",

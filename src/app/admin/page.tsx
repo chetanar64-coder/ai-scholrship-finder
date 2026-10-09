@@ -3,6 +3,8 @@ import { getAdminAnalyticsData } from "@/actions/analytics";
 import { AnalyticsDashboard } from "@/components/admin/AnalyticsDashboard";
 import { BarChart3, ShieldCheck } from "lucide-react";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Admin Analytics — ScholarAI",
   description: "Platform analytics, student demographics, and scholarship eligibility score distributions.",

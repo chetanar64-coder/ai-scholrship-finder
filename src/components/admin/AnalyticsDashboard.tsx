@@ -46,12 +46,12 @@ export function AnalyticsDashboard({ data }: AnalyticsDashboardProps) {
             <Users className="w-16 h-16 text-cyan-400" />
           </div>
           <CardHeader className="pb-2">
-            <CardDescription className="text-xs text-slate-400 flex items-center justify-between">
+            <div className="text-xs text-slate-400 flex items-center justify-between mb-1">
               <span>Active Platform Students</span>
               <Badge variant="default" className="text-[10px] bg-cyan-500/10 text-cyan-400 border-cyan-500/20">
                 Live DB
               </Badge>
-            </CardDescription>
+            </div>
             <CardTitle className="text-2xl font-extrabold text-slate-100 font-mono mt-1">
               {data.totalStudents}
             </CardTitle>
@@ -68,12 +68,12 @@ export function AnalyticsDashboard({ data }: AnalyticsDashboardProps) {
             <Award className="w-16 h-16 text-indigo-400" />
           </div>
           <CardHeader className="pb-2">
-            <CardDescription className="text-xs text-slate-400 flex items-center justify-between">
+            <div className="text-xs text-slate-400 flex items-center justify-between mb-1">
               <span>Database Scholarships</span>
               <Badge variant="purple" className="text-[10px]">
                 Verified
               </Badge>
-            </CardDescription>
+            </div>
             <CardTitle className="text-2xl font-extrabold text-slate-100 font-mono mt-1">
               {data.totalScholarships}
             </CardTitle>
@@ -90,12 +90,12 @@ export function AnalyticsDashboard({ data }: AnalyticsDashboardProps) {
             <TrendingUp className="w-16 h-16 text-emerald-400" />
           </div>
           <CardHeader className="pb-2">
-            <CardDescription className="text-xs text-slate-400 flex items-center justify-between">
+            <div className="text-xs text-slate-400 flex items-center justify-between mb-1">
               <span>Average Student CGPA</span>
               <Badge variant="success" className="text-[10px]">
                 High Merit
               </Badge>
-            </CardDescription>
+            </div>
             <CardTitle className="text-2xl font-extrabold text-slate-100 font-mono mt-1">
               {data.avgCgpa} <span className="text-xs font-normal text-slate-400">/ 10</span>
             </CardTitle>
@@ -112,12 +112,12 @@ export function AnalyticsDashboard({ data }: AnalyticsDashboardProps) {
             <IndianRupee className="w-16 h-16 text-amber-400" />
           </div>
           <CardHeader className="pb-2">
-            <CardDescription className="text-xs text-slate-400 flex items-center justify-between">
+            <div className="text-xs text-slate-400 flex items-center justify-between mb-1">
               <span>Avg Annual Income</span>
               <Badge variant="secondary" className="text-[10px]">
                 Need-Based
               </Badge>
-            </CardDescription>
+            </div>
             <CardTitle className="text-2xl font-extrabold text-slate-100 font-mono mt-1">
               ₹{(data.avgIncome / 100000).toFixed(1)}L <span className="text-xs font-normal text-slate-400">/ yr</span>
             </CardTitle>

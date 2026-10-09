@@ -7,6 +7,8 @@ import { LiveSearchSection } from "@/components/scholarships/LiveSearchSection";
 import { Button } from "@/components/ui/button";
 import { Search, UserCheck, AlertCircle, ArrowRight, Sparkles } from "lucide-react";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Find Scholarships — Dual AI & Live Web Finder",
   description: "Discover curated scholarships from our database and real-time opportunities scraped via SerpApi Google Search.",
