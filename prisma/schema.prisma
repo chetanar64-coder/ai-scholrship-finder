@@ -1,0 +1,42 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           Int      @id @default(autoincrement())
+  name         String
+  email        String   @unique
+  cgpa         Float
+  familyIncome Float
+  category     String   // General | OBC | SC | ST | EWS
+  course       String   // B.Tech | M.Tech | MBA | MCA | PhD | B.Sc | M.Sc | B.Com | Other
+  semester     Int      // 1–8
+  achievements String   @default("")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Scholarship {
+  id                 Int      @id @default(autoincrement())
+  name               String
+  provider           String
+  amount             Int      // Annual award in ₹
+  description        String
+  minCgpa            Float    // Minimum CGPA required
+  maxIncome          Float    // Maximum annual family income in ₹
+  eligibleCategories String   // JSON-serialised string[], e.g. '["SC","ST","OBC"]'
+  eligibleCourses    String   // JSON-serialised string[], e.g. '["B.Tech","M.Tech"]'
+  maxSemester        Int      // Students up to this semester are eligible
+  deadline           DateTime // Application deadline
+  applyLink          String
+  benefits           String   // JSON-serialised string[] of benefit descriptions
+  createdAt          DateTime @default(now())
+}
