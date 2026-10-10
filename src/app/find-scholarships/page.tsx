@@ -15,14 +15,18 @@ export const metadata: Metadata = {
 };
 
 export default async function FindScholarshipsPage() {
-  const email = await getLatestUserEmail();
-
+  let email: string | null = null;
   let user = null;
   let matchesResponse = null;
 
-  if (email) {
-    user = await prisma.user.findUnique({ where: { email } });
-    matchesResponse = await getScholarshipMatches(email);
+  try {
+    email = await getLatestUserEmail();
+    if (email) {
+      user = await prisma.user.findUnique({ where: { email } });
+      matchesResponse = await getScholarshipMatches(email);
+    }
+  } catch (error) {
+    console.error("Failed to load scholarships in FindScholarshipsPage:", error);
   }
 
   return (

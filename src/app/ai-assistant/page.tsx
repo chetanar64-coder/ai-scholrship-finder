@@ -12,11 +12,16 @@ export const metadata: Metadata = {
 };
 
 export default async function AiAssistantPage() {
-  const email = await getLatestUserEmail();
+  let email: string | null = null;
   let user = null;
 
-  if (email) {
-    user = await prisma.user.findUnique({ where: { email } });
+  try {
+    email = await getLatestUserEmail();
+    if (email) {
+      user = await prisma.user.findUnique({ where: { email } });
+    }
+  } catch (error) {
+    console.error("Failed to load user for AI Assistant:", error);
   }
 
   return (
